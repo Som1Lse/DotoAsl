@@ -1,6 +1,7 @@
 state("Dishonored_DO"){
-    bool isLoading:      0x2809DC8;
-    string128 levelName: 0x3FEB2B0;
+    // Alternatively 0x280AE54
+    bool isLoading:      0x280AE48;
+    string128 levelName: 0x3FEC390;
 }
 
 startup {
