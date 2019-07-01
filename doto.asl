@@ -1,16 +1,15 @@
 state("Dishonored_DO", "1.1") {
-    // 1.142.3.8 
-    // 188620800 
+    // 1.142.3.8
+    // 188620800
     bool isLoading:      0x2809DC8;
     string128 levelName: 0x3FEB2B0;
 }
 
-state("Dishonored_DO", "1.2") {
-    // 1.144.0.17
-    // 194486272 
-    // Alternatively 0x280AE54
-    bool isLoading:      0x280AE48;
-    string128 levelName: 0x3FEC390;
+state("Dishonored_DO", "1.3") {
+    // 1.145.0.0
+    // 71852032
+    bool isLoading:      0x2977E88;
+    string128 levelName: 0x415CF50;
 }
 
 startup {
@@ -34,12 +33,12 @@ startup {
 init {
     switch (modules.First().ModuleMemorySize) {
         case 188620800: version = "1.1"; break;
-        case 194486272: version = "1.2"; break;
-        default:        version = "1.2"; break;
+        case  71852032: version = "1.3"; break;
+        default:        version = "1.3"; break;
     }
-	
-    //print(modules.First().FileVersionInfo.FileVersion);
-    //print(modules.First().ModuleMemorySize.ToString());
+
+    // print(modules.First().FileVersionInfo.FileVersion);
+    // print(modules.First().ModuleMemorySize.ToString());
 
     if(vars.autoSplitIndex == -1){
         for(vars.autoSplitIndex = 0;vars.autoSplitIndex < vars.autoSplits.Length;++vars.autoSplitIndex){
