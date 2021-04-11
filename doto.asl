@@ -5,6 +5,13 @@ state("Dishonored_DO", "1.1") {
     string128 levelName: 0x3FEB2B0;
 }
 
+state("Dishonored_DO", "1.2") {
+    // 1.144.0.17
+    // 194486272
+    bool isLoading:      0x280AE48;
+    string128 levelName: 0x3FEC390;
+}
+
 state("Dishonored_DO", "1.3") {
     // 1.145.0.0
     // 71852032
@@ -33,6 +40,7 @@ startup {
 init {
     switch (modules.First().ModuleMemorySize) {
         case 188620800: version = "1.1"; break;
+        case 194486272: version = "1.2"; break;
         case  71852032: version = "1.3"; break;
         default:        version = "1.3"; break;
     }
